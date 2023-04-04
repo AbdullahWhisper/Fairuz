@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+/* navbar */
+nav {
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    color:rgb(127, 27, 222);
+    height: 50px;
+    align-items: center;
+}
+
+nav.logo {
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px ;
+}
+nav .logo h4 {
+    font-size: 1.5em;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+    padding-left: 500px;
+    font-size: 1.5em;
+}
+
+nav ul li a {
+    color:rgb(127, 27, 222);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+nav ul li a:hover {
+    color:rgb(169, 108, 226);
+}
+.banner {
+	background-image: url('https://picsum.photos/800/400/?image=977');
+	background-size: cover;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner h2 {
+	color: #560a5f;
+	font-size: 40px;
+	margin: 0;
+}
+.banner p {
+	color: #861793;
+	font-size: 20px;
+	margin-top: 20px;
+	max-width: 600px;
+}
+.hero p {
+	text-align: justify;
+	color: #560a5f;
+	font-size: 30px;
+	margin: 50px 20px;
+}
+form {
+	margin: 50px auto;
+	max-width: 600px;
+	padding: 20px;
+	border: 10px solid #ccc;
+	display: flex;
+	flex-direction: column;
+}
+
+form h3 {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+	padding: 10px;
+	font-size: 16px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+form textarea {
+	height: 120px;
+}
+
+form input[type="submit"]{ 
+	background-color: #333;
+	color: #fff;
+	padding : 5px;
+}
+footer p {
+	text-align: center;
+	background-color: black;
+	color: #fff;
+	padding : 10px;
+}
+#ppp{
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 99;
+    background-color: purple;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+#ppp:hover{
+    background-color: #efcef3;
+}
+/* icon hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 33px;
+    height: 25px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color:rgb(127, 27, 222);
+    border-radius: 3px;
+    transition: all 0.5s ;
+}
+
+/* hamburger animasi */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform:scale(0);
+}
+
+/* responsive  layar*/
+/* tablet */
+@media screen and (max-width: 768px){
+    nav ul {
+        width: 50%; 
+    }
+}
+
+/* hp */
+@media screen and (max-width: 576px){
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 6%;
+        width: 50%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgb(169, 108, 226);
+        z-index: 999999999;
+        transform: translateX(100%);
+        transition: all 0.5s;
+        opacity: 1;
+    }
+
+    nav ul.slide {
+        transform: translateX(0);
+        opacity:1;
+        z-index:999 ;
+    }
+
+    nav ul li a{
+        color: white;
+    }
+    nav ul li a:hover {
+        color:black;
+    }
+    .banner h2{
+		padding: auto;
+		font-size : 30px;
+	}
+	.banner p{
+		padding: auto;
+		font-size: 15px;
+	}
+	header {
+		height: 20px;
+		padding: 15px auto;
+	}
+	header h1{
+		font-size: 25px;
+	}
+	.hero p {
+		font-size: 20px;
+		padding:40px 10px;
+	}
+}
